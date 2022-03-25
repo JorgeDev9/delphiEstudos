@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/25 13:33:54.000.941,=C:\Users\Lukaz\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 13:51:17.000.631,C:\Users\Lukaz\Desktop\ProjetoEstudos\src\ProjetoEstudos.View.Main.pas=C:\Users\Lukaz\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 13:51:17.000.631,C:\Users\Lukaz\Desktop\ProjetoEstudos\src\ProjetoEstudos.View.Main.dfm=C:\Users\Lukaz\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/03/25 13:51:36.000.387,C:\Users\Lukaz\Desktop\ProjetoEstudos\ProjetoEstudos.dproj=C:\Users\Lukaz\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/03/25 14:28:23.000.856,=C:\Users\Lukaz\Desktop\ProjetoEstudos\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 14:29:12.000.456,C:\Users\Lukaz\Desktop\ProjetoEstudos\src\ProjetoEstudos.View.Cadastro.dfm=C:\Users\Lukaz\Desktop\ProjetoEstudos\Unit1.dfm</Transaction>
+    <Transaction>2022/03/25 14:29:12.000.456,C:\Users\Lukaz\Desktop\ProjetoEstudos\src\ProjetoEstudos.View.Cadastro.pas=C:\Users\Lukaz\Desktop\ProjetoEstudos\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 14:29:26.000.347,=C:\Users\Lukaz\Desktop\ProjetoEstudos\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 14:30:06.000.153,C:\Users\Lukaz\Desktop\ProjetoEstudos\src\ProjetoEstudos.View.uCodes.pas=C:\Users\Lukaz\Desktop\ProjetoEstudos\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 16:01:08.000.890,C:\Users\Lukaz\Desktop\ProjetoEstudos\src\ProjetoEstudos.View.Cadastro.pas=</Transaction>
+    <Transaction>2022/03/25 16:01:15.000.734,=C:\Users\Lukaz\Desktop\ProjetoEstudos\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 16:02:45.000.616,C:\Users\Lukaz\Desktop\ProjetoEstudos\Unit1.dfm=C:\Users\Lukaz\Desktop\ProjetoEstudos\src\ProjetoEstudos.View.Cadastro.dfm</Transaction>
+    <Transaction>2022/03/25 16:02:45.000.616,C:\Users\Lukaz\Desktop\ProjetoEstudos\Unit1.pas=C:\Users\Lukaz\Desktop\ProjetoEstudos\src\ProjetoEstudos.View.Cadastro.pas</Transaction>
+  </Transactions>
+</BorlandProject>

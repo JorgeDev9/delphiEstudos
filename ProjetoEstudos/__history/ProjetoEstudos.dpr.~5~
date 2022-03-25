@@ -1,0 +1,17 @@
+program ProjetoEstudos;
+
+uses
+  Vcl.Forms,
+  ProjetoEstudos.View.Main in 'src\ProjetoEstudos.View.Main.pas' {FormPrincipal},
+  ProjetoEstudos.View.uCodes in 'src\ProjetoEstudos.View.uCodes.pas',
+  ProjetoEstudos.View.Cadastro in 'src\ProjetoEstudos.View.Cadastro.pas' {FormCadastro};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
+  //Application.CreateForm(TFormCadastro, FormCadastro);
+  Application.Run;
+end.
