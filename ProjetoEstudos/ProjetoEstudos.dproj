@@ -104,10 +104,14 @@
             <Form>FormPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="src\ProjetoEstudos.View.uCodes.pas"/>
         <DCCReference Include="src\ProjetoEstudos.View.Cadastro.pas">
             <Form>FormCadastro</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\ProjetoEstudos.Data.DMdata.pas">
+            <Form>DM</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

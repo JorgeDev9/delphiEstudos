@@ -1,0 +1,35 @@
+object FrmData: TFrmData
+  Left = 0
+  Top = 0
+  Caption = 'Data'
+  ClientHeight = 332
+  ClientWidth = 484
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Lukaz\Documents\GitHub\delphiEstudos\ProjetoEs' +
+        'tudos\DataBase\BASE.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'CharacterSet=UTF8'
+      'DriverID=FB')
+    Left = 32
+    Top = 16
+  end
+  object FDQryCliente: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM CLIENTE')
+    Left = 120
+    Top = 16
+  end
+end

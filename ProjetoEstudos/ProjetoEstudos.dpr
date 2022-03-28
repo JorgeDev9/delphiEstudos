@@ -3,8 +3,8 @@ program ProjetoEstudos;
 uses
   Vcl.Forms,
   ProjetoEstudos.View.Main in 'src\ProjetoEstudos.View.Main.pas' {FormPrincipal},
-  ProjetoEstudos.View.uCodes in 'src\ProjetoEstudos.View.uCodes.pas',
-  ProjetoEstudos.View.Cadastro in 'src\ProjetoEstudos.View.Cadastro.pas' {FormCadastro};
+  ProjetoEstudos.View.Cadastro in 'src\ProjetoEstudos.View.Cadastro.pas' {FormCadastro},
+  ProjetoEstudos.Data.DMdata in 'src\ProjetoEstudos.Data.DMdata.pas' {DM: TDataModule};
 
 {$R *.res}
 
@@ -13,5 +13,7 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFormPrincipal, FormPrincipal);
   Application.CreateForm(TFormCadastro, FormCadastro);
+  Application.CreateForm(TDM, DM);
   Application.Run;
+
 end.

@@ -23,7 +23,6 @@ object FormPrincipal: TFormPrincipal
     Color = 4900842
     ParentBackground = False
     TabOrder = 0
-    ExplicitHeight = 501
     object SpeedButton1: TSpeedButton
       Left = 8
       Top = 32
@@ -1050,9 +1049,6 @@ object FormPrincipal: TFormPrincipal
     Color = 2697513
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 105
-    ExplicitWidth = 665
-    ExplicitHeight = 501
     object Image2: TImage
       Left = 6
       Top = 8
@@ -1210,9 +1206,6 @@ object FormPrincipal: TFormPrincipal
       Color = 4900842
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 368
-      ExplicitTop = 8
-      ExplicitHeight = 449
       object Image1: TImage
         Left = 24
         Top = 8

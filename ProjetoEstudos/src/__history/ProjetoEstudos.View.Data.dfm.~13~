@@ -1,0 +1,37 @@
+object FrmData: TFrmData
+  Left = 0
+  Top = 0
+  Caption = 'Data'
+  ClientHeight = 332
+  ClientWidth = 484
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Base: TFDConnection
+    Params.Strings = (
+      'CharacterSet=UTF8'
+      'DriverID=FB'
+      'User_Name=sysdba'
+      'Password=masterkey')
+    Left = 32
+    Top = 16
+  end
+  object FDQryCliente: TFDQuery
+    Connection = Base
+    SQL.Strings = (
+      'SELECT * FROM CLIENTE')
+    Left = 120
+    Top = 16
+  end
+  object FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
+    Left = 184
+    Top = 96
+  end
+end
