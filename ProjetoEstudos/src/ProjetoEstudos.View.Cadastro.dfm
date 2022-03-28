@@ -83,10 +83,10 @@ object FormCadastro: TFormCadastro
     object StaticText1: TStaticText
       Left = 32
       Top = 88
-      Width = 46
+      Width = 60
       Height = 17
       ParentCustomHint = False
-      Caption = 'Telefone'
+      Caption = 'Telefone(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
@@ -150,9 +150,6 @@ object FormCadastro: TFormCadastro
       Enabled = False
       TabOrder = 1
       OnClick = BtnGravarClick
-      ExplicitLeft = 432
-      ExplicitTop = 10
-      ExplicitHeight = 25
     end
     object BtnCancelar: TButton
       Left = 566
@@ -164,9 +161,6 @@ object FormCadastro: TFormCadastro
       Enabled = False
       TabOrder = 2
       OnClick = BtnCancelarClick
-      ExplicitLeft = 529
-      ExplicitTop = 10
-      ExplicitHeight = 25
     end
   end
   object GroupBox2: TGroupBox
@@ -199,10 +193,10 @@ object FormCadastro: TFormCadastro
     object StaticText4: TStaticText
       Left = 32
       Top = 17
-      Width = 31
+      Width = 45
       Height = 17
       ParentCustomHint = False
-      Caption = 'Nome'
+      Caption = 'Nome(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
@@ -219,10 +213,10 @@ object FormCadastro: TFormCadastro
     object StaticText6: TStaticText
       Left = 32
       Top = 62
-      Width = 46
+      Width = 60
       Height = 17
       ParentCustomHint = False
-      Caption = 'Telefone'
+      Caption = 'Telefone(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
@@ -249,10 +243,10 @@ object FormCadastro: TFormCadastro
     object StaticText8: TStaticText
       Left = 360
       Top = 17
-      Width = 23
+      Width = 37
       Height = 17
       ParentCustomHint = False
-      Caption = 'CPF'
+      Caption = 'CPF(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET

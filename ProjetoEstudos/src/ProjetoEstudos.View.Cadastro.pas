@@ -36,6 +36,7 @@ type
     private
     procedure IncluirCadastro;
     procedure GravarGerarRegistro;
+    procedure ValidationNomeCpf;
         { Private declarations }
     public
         { Public declarations }
@@ -52,7 +53,7 @@ uses
 
 procedure TFormCadastro.BtnGravarClick(Sender: TObject);
 begin
-  GravarGerarRegistro;
+  ValidationNomeCpf;
 end;
 
 procedure TFormCadastro.BtnIncluirClick(Sender: TObject);
@@ -63,7 +64,7 @@ end;
 
 procedure TFormCadastro.BtnCancelarClick(Sender: TObject);
 begin
- BloquearVisual;
+  BloquearVisual;
 end;
 
 procedure TFormCadastro.IncluirCadastro;
@@ -108,6 +109,17 @@ begin
   finally
   end;
   ShowMessage('GRAVADO COM SUCESSO!!');
+end;
+
+procedure TFormCadastro.ValidationNomeCpf;
+begin
+  if (DBEditNome.Text = '') or (DBEditCpf.Text = '') then
+  begin
+    MessageDlg('Por Favor, Preencha os Campos!', mtInformation,
+      [mbOk], 0, mbOk);
+  end
+  else
+    GravarGerarRegistro;
 end;
 
 end.

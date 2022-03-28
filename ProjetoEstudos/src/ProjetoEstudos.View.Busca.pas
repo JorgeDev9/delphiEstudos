@@ -32,9 +32,9 @@ implementation
 
 procedure TFrmBusca.BtnBuscaClick(Sender: TObject);
 begin
- DM.qryBusca.Close;
- DM.qryBusca.ParamByName('clinome').AsString := (EditBusca.Text);
- DM.qryBusca.Open;
+  DM.qryBusca.Close;
+  DM.qryBusca.ParamByName('clinome').AsString := (EditBusca.Text);
+  DM.qryBusca.Open;
 end;
 
 end.

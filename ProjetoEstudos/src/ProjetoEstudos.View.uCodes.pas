@@ -8,7 +8,8 @@ procedure BloquearVisual;
 implementation
 uses ProjetoEstudos.View.Cadastro, SysUtils;
 
-procedure LiberarVisual;
+
+procedure LiberarVisual; //Procedure para habilitar os botões e edits.
 begin
   FormCadastro.DBEditNome.Enabled := True;
   FormCadastro.DBEditCpf.Enabled := True;
@@ -22,7 +23,7 @@ begin
   FormCadastro.DBEditNome.SetFocus;
 end;
 
-procedure BloquearVisual;
+procedure BloquearVisual; //Procedure para desabilitar os botões e edits.
 begin
   FormCadastro.DBEditNome.Enabled := False;
   FormCadastro.DBEditCpf.Enabled := False;
