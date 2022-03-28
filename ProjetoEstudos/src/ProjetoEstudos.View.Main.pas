@@ -19,7 +19,11 @@ type
         pnlSobre: TPanel;
         Image1: TImage;
         Image2: TImage;
+    BtnBusca: TSpeedButton;
         procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure BtnBuscaClick(Sender: TObject);
     private
         procedure CreateFormCadastro;
         { Private declarations }
@@ -33,25 +37,50 @@ var
 implementation
 
 uses
-    ProjetoEstudos.View.Cadastro;
+    ProjetoEstudos.View.Cadastro, ProjetoEstudos.View.uCodes, ProjetoEstudos.View.Busca;
 
 {$R *.dfm}
 
+procedure TFormPrincipal.SpeedButton1Click(Sender: TObject);
+begin
+ FormCadastro.Close;
+ FrmBusca.Close;
+ pnlSobre.Visible := True;
+ BloquearVisual;
+end;
+
 procedure TFormPrincipal.SpeedButton2Click(Sender: TObject);
 begin
-    CreateFormCadastro;
+ CreateFormCadastro;
+end;
+
+procedure TFormPrincipal.SpeedButton3Click(Sender: TObject);
+begin
+ Application.Terminate;
+end;
+
+procedure TFormPrincipal.BtnBuscaClick(Sender: TObject);
+begin
+ // Modificações para ficar dentro do panel
+ FrmBusca.Parent := FormPrincipal.PnlPrincipal;
+ FrmBusca.Align := alClient;
+ FrmBusca.BorderStyle := bsNone;
+
+ // Exibe a tela em questão
+ FrmBusca.Show;
+ pnlSobre.Visible := False;
 end;
 
 procedure TFormPrincipal.CreateFormCadastro;
 begin
-    // Modificações para ficar dentro do panel
-    FormCadastro.Parent := FormPrincipal.PnlPrincipal;
-    FormCadastro.Align := alClient;
-    FormCadastro.BorderStyle := bsNone;
+ // Modificações para ficar dentro do panel
+ FormCadastro.Parent := FormPrincipal.PnlPrincipal;
+ FormCadastro.Align := alClient;
+ FormCadastro.BorderStyle := bsNone;
 
-    // Exibe a tela em questão
-    FormCadastro.Show;
-    pnlSobre.Visible := False;
+ // Exibe a tela em questão
+ FormCadastro.Show;
+ pnlSobre.Visible := False;
 end;
 
 end.

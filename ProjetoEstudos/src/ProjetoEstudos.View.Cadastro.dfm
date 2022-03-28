@@ -4,14 +4,13 @@ object FormCadastro: TFormCadastro
   Caption = 'Cadastro'
   ClientHeight = 437
   ClientWidth = 642
-  Color = 2697513
+  Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -21,7 +20,7 @@ object FormCadastro: TFormCadastro
     Height = 177
     Align = alTop
     Caption = 'Cliente'
-    Color = 2697513
+    Color = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMenuText
     Font.Height = -11
@@ -68,10 +67,10 @@ object FormCadastro: TFormCadastro
       Height = 17
       ParentCustomHint = False
       Caption = 'Nome'
-      Color = 2697513
+      Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
+      Font.Color = clMenuText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
@@ -88,10 +87,10 @@ object FormCadastro: TFormCadastro
       Height = 17
       ParentCustomHint = False
       Caption = 'Telefone'
-      Color = 2697513
+      Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
+      Font.Color = clMenuText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
@@ -108,10 +107,10 @@ object FormCadastro: TFormCadastro
       Height = 17
       ParentCustomHint = False
       Caption = 'CPF'
-      Color = 2697513
+      Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
+      Font.Color = clMenuText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
@@ -128,58 +127,56 @@ object FormCadastro: TFormCadastro
     Width = 642
     Height = 45
     Align = alBottom
+    Color = 2697513
+    ParentBackground = False
     TabOrder = 1
     object BtnIncluir: TButton
-      Left = 15
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 1
+      Top = 1
+      Width = 77
+      Height = 43
+      Align = alLeft
       Caption = 'Incluir'
       TabOrder = 0
       OnClick = BtnIncluirClick
     end
     object BtnGravar: TButton
-      Left = 432
-      Top = 10
+      Left = 491
+      Top = 1
       Width = 75
-      Height = 25
+      Height = 43
+      Align = alRight
       Caption = 'Gravar'
+      Enabled = False
       TabOrder = 1
       OnClick = BtnGravarClick
+      ExplicitLeft = 432
+      ExplicitTop = 10
+      ExplicitHeight = 25
     end
-    object Button1: TButton
-      Left = 105
-      Top = 10
+    object BtnCancelar: TButton
+      Left = 566
+      Top = 1
       Width = 75
-      Height = 25
-      Caption = 'Alterar'
+      Height = 43
+      Align = alRight
+      Caption = 'Cancelar'
+      Enabled = False
       TabOrder = 2
-    end
-    object Button2: TButton
-      Left = 201
-      Top = 10
-      Width = 75
-      Height = 25
-      Caption = 'Cancelar'
-      TabOrder = 3
-    end
-    object Button3: TButton
-      Left = 529
-      Top = 10
-      Width = 75
-      Height = 25
-      Caption = 'Cancelar'
-      TabOrder = 4
+      OnClick = BtnCancelarClick
+      ExplicitLeft = 529
+      ExplicitTop = 10
+      ExplicitHeight = 25
     end
   end
   object GroupBox2: TGroupBox
     Left = 0
     Top = 177
     Width = 642
-    Height = 107
+    Height = 120
     Align = alTop
-    Caption = 'Parente 1 (Opicional)'
-    Color = 2697513
+    Caption = 'Parente (Opicional)'
+    Color = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -196,6 +193,7 @@ object FormCadastro: TFormCadastro
       Height = 21
       DataField = 'NOME_PARENTE'
       DataSource = DSparentes
+      Enabled = False
       TabOrder = 0
     end
     object StaticText4: TStaticText
@@ -205,10 +203,10 @@ object FormCadastro: TFormCadastro
       Height = 17
       ParentCustomHint = False
       Caption = 'Nome'
-      Color = 2697513
+      Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
+      Font.Color = clMenuText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
@@ -219,16 +217,16 @@ object FormCadastro: TFormCadastro
       Transparent = False
     end
     object StaticText6: TStaticText
-      Left = 360
-      Top = 17
+      Left = 32
+      Top = 62
       Width = 46
       Height = 17
       ParentCustomHint = False
       Caption = 'Telefone'
-      Color = 2697513
+      Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
+      Font.Color = clMenuText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
@@ -240,24 +238,25 @@ object FormCadastro: TFormCadastro
     end
     object DBEdit3: TDBEdit
       Left = 360
-      Top = 37
+      Top = 35
       Width = 209
       Height = 21
-      DataField = 'TELL_PARENTE'
+      DataField = 'CPF_PARENTE'
       DataSource = DSparentes
+      Enabled = False
       TabOrder = 3
     end
     object StaticText8: TStaticText
-      Left = 32
-      Top = 62
+      Left = 360
+      Top = 17
       Width = 23
       Height = 17
       ParentCustomHint = False
       Caption = 'CPF'
-      Color = 2697513
+      Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
+      Font.Color = clMenuText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
@@ -272,104 +271,9 @@ object FormCadastro: TFormCadastro
       Top = 79
       Width = 209
       Height = 21
-      DataField = 'CPF_PARENTE'
+      DataField = 'TELL_PARENTE'
       DataSource = DSparentes
-      TabOrder = 5
-    end
-  end
-  object GroupBox3: TGroupBox
-    Left = 0
-    Top = 284
-    Width = 642
-    Height = 102
-    Align = alTop
-    Caption = 'Parente 2 (Opcional)'
-    TabOrder = 3
-    object StaticText2: TStaticText
-      Left = 29
-      Top = 16
-      Width = 31
-      Height = 17
-      ParentCustomHint = False
-      Caption = 'Nome'
-      Color = 2697513
-      DoubleBuffered = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentColor = False
-      ParentDoubleBuffered = False
-      ParentFont = False
-      TabOrder = 0
-      Transparent = False
-    end
-    object DBEdit2: TDBEdit
-      Left = 29
-      Top = 34
-      Width = 297
-      Height = 21
-      DataField = 'NOME_PARENTE'
-      DataSource = DataSource1
-      TabOrder = 1
-    end
-    object StaticText7: TStaticText
-      Left = 357
-      Top = 16
-      Width = 46
-      Height = 17
-      ParentCustomHint = False
-      Caption = 'Telefone'
-      Color = 2697513
-      DoubleBuffered = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentColor = False
-      ParentDoubleBuffered = False
-      ParentFont = False
-      TabOrder = 2
-      Transparent = False
-    end
-    object DBEdit4: TDBEdit
-      Left = 357
-      Top = 34
-      Width = 209
-      Height = 21
-      DataField = 'TELL_PARENTE'
-      DataSource = DataSource1
-      TabOrder = 3
-    end
-    object StaticText9: TStaticText
-      Left = 29
-      Top = 60
-      Width = 23
-      Height = 17
-      ParentCustomHint = False
-      Caption = 'CPF'
-      Color = 2697513
-      DoubleBuffered = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DLight
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentColor = False
-      ParentDoubleBuffered = False
-      ParentFont = False
-      TabOrder = 4
-      Transparent = False
-    end
-    object DBEdit6: TDBEdit
-      Left = 29
-      Top = 73
-      Width = 209
-      Height = 21
-      DataField = 'TELL_PARENTE'
-      DataSource = DataSource1
+      Enabled = False
       TabOrder = 5
     end
   end

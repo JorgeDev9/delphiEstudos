@@ -19,31 +19,23 @@ type
     DBEditCpf: TDBEdit;
     DBEditTelefone: TDBEdit;
     GroupBox2: TGroupBox;
-    GroupBox3: TGroupBox;
     DBEdit1: TDBEdit;
     StaticText4: TStaticText;
     StaticText5: TStaticText;
     StaticText1: TStaticText;
     StaticText3: TStaticText;
-    StaticText2: TStaticText;
-    DBEdit2: TDBEdit;
     StaticText6: TStaticText;
     DBEdit3: TDBEdit;
-    StaticText7: TStaticText;
-    DBEdit4: TDBEdit;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
+    BtnCancelar: TButton;
     StaticText8: TStaticText;
     DBEdit5: TDBEdit;
-    StaticText9: TStaticText;
-    DBEdit6: TDBEdit;
     DSparentes: TDataSource;
     procedure BtnGravarClick(Sender: TObject);
     procedure BtnIncluirClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
     private
     procedure IncluirCadastro;
+    procedure GravarGerarRegistro;
         { Private declarations }
     public
         { Public declarations }
@@ -54,51 +46,24 @@ var
 
 implementation
 uses
- ProjetoEstudos.Data.DMdata;
+ ProjetoEstudos.Data.DMdata, ProjetoEstudos.View.uCodes;
 
 {$R *.dfm}
 
 procedure TFormCadastro.BtnGravarClick(Sender: TObject);
 begin
-  if DM.queryCliCLI_CODIGO.AsInteger <= 0 then
-  begin
-    DM.qryGerador.Close;
-    DM.qryGerador.SQL.Text := 'select gen_id (GEN_CODCLI,1) as GERADOR from RDB$DATABASE';
-    DM.qryGerador.open;
-    DM.queryCliCLI_CODIGO.AsInteger := DM.qryGerador.FieldByName('GERADOR').AsInteger;
-  end;
-  Try
-   DataSource1.DataSet.Post;
-   DSparentes.DataSet.Post;
-  finally
-  end;
-  
-  while not DM.queryParentes.EOF do
-  begin
-  DM.queryParentes.Edit;
-  DM.queryParentesCli_Codigo.AsInteger:= DM.queryCliCLI_CODIGO.AsInteger;
-  DM.queryParentes.Next;
-  end;
-
-  try
-  if DM.queryParentes.State in dsEditModes then
-  DM.queryParentes.Post;
-  DM.queryParentes.ApplyUpdates(0);
-  DM.queryParentes.Transaction.CommitRetaining;
-  finally
-  end;
-  
-  ShowMessage('GRAVADO COM SUCESSO!!');
+  GravarGerarRegistro;
 end;
 
 procedure TFormCadastro.BtnIncluirClick(Sender: TObject);
 begin
   IncluirCadastro;
+  LiberarVisual;
 end;
 
-procedure TFormCadastro.FormCreate(Sender: TObject);
+procedure TFormCadastro.BtnCancelarClick(Sender: TObject);
 begin
- //Dm.queryParentes.Edit;
+ BloquearVisual;
 end;
 
 procedure TFormCadastro.IncluirCadastro;
@@ -107,10 +72,42 @@ begin
   Dm.queryParentes.Open;
   DataSource1.DataSet.Append;
   DSparentes.DataSet.Append;
-  DBEditNome.Enabled := True;
-  DBEditCpf.Enabled := True;
-  DBEditTelefone.Enabled := True;
-  DBEditNome.SetFocus;
+end;
+
+procedure TFormCadastro.GravarGerarRegistro;
+begin
+  if DM.queryCliCLI_CODIGO.AsInteger <= 0 then
+  begin
+    DM.qryGerador.Close;
+    DM.qryGerador.SQL.Text := 'select gen_id (GEN_CODCLI,1) as GERADOR from RDB$DATABASE';
+    DM.qryGerador.open;
+    DM.queryCliCLI_CODIGO.AsInteger := DM.qryGerador.FieldByName('GERADOR').AsInteger;
+  end;
+
+  while not DM.queryParentes.EOF do
+  begin
+    if DM.queryParentesID_PARENTE.AsInteger <= 0 then
+    begin
+      DM.qryGerador.Close;
+      DM.qryGerador.SQL.Text := 'select gen_id (GEN_CODCLI,1) as GERADOR2 from RDB$DATABASE';
+      DM.qryGerador.open;
+      DM.queryParentes.Edit;
+      DM.queryParentesID_PARENTE.AsInteger := DM.qryGerador.FieldByName('GERADOR2').AsInteger;
+    end;
+
+    DM.queryParentes.Edit;
+    DM.queryParentesCli_Codigo.AsInteger := DM.queryCliCLI_CODIGO.AsInteger;
+    DM.queryParentes.Next;
+  end;
+
+  DM.queryParentesCli_Codigo.AsInteger := DM.queryCliCLI_CODIGO.AsInteger;
+
+  try
+    DataSource1.DataSet.Post;
+    DSparentes.DataSet.Post;
+  finally
+  end;
+  ShowMessage('GRAVADO COM SUCESSO!!');
 end;
 
 end.

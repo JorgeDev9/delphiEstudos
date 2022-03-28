@@ -24,12 +24,21 @@ type
     queryCliCLI_NOME: TWideStringField;
     queryCliCLI_CPF: TIntegerField;
     queryCliCLI_TELEFONE: TIntegerField;
-    queryCliID_PARENTE: TIntegerField;
     queryCliNOME_PARENTE: TWideStringField;
     queryCliTELL_PARENTE: TWideStringField;
     queryCliCPF_PARENTE: TWideStringField;
     queryCliCLI_CODIGO_1: TIntegerField;
     qryGerador: TFDQuery;
+    qryBusca: TFDQuery;
+    qryBuscaCLI_CODIGO: TIntegerField;
+    qryBuscaCLI_NOME: TWideStringField;
+    qryBuscaCLI_CPF: TIntegerField;
+    qryBuscaCLI_TELEFONE: TIntegerField;
+    qryBuscaID_PARENTE: TIntegerField;
+    qryBuscaNOME_PARENTE: TWideStringField;
+    qryBuscaTELL_PARENTE: TWideStringField;
+    qryBuscaCPF_PARENTE: TWideStringField;
+    qryBuscaCLI_CODIGO_1: TIntegerField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
