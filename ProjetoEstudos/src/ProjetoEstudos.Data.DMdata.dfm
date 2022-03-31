@@ -79,14 +79,17 @@ object DM: TDM
     UpdateOptions.UpdateTableName = 'PARENTES'
     UpdateOptions.KeyFields = 'ID_PARENTE'
     SQL.Strings = (
-      'select * from Parentes p')
+      'select * from Parentes p'
+      'where p.NOME_PARENTE =:parente')
     Left = 232
     Top = 40
-    object queryParentesID_PARENTE: TIntegerField
-      FieldName = 'ID_PARENTE'
-      Origin = 'ID_PARENTE'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
+    ParamData = <
+      item
+        Name = 'PARENTE'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 80
+      end>
     object queryParentesNOME_PARENTE: TWideStringField
       FieldName = 'NOME_PARENTE'
       Origin = 'NOME_PARENTE'
@@ -105,6 +108,11 @@ object DM: TDM
     object queryParentesCLI_CODIGO: TIntegerField
       FieldName = 'CLI_CODIGO'
       Origin = 'CLI_CODIGO'
+    end
+    object queryParentesID_PARENTE: TIntegerField
+      FieldName = 'ID_PARENTE'
+      Origin = 'ID_PARENTE'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
   end
   object qryGerador: TFDQuery

@@ -2,8 +2,8 @@ object FormCadastro: TFormCadastro
   Left = 0
   Top = 0
   Caption = 'Cadastro'
-  ClientHeight = 437
-  ClientWidth = 642
+  ClientHeight = 449
+  ClientWidth = 641
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@ object FormCadastro: TFormCadastro
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 642
-    Height = 177
+    Width = 641
+    Height = 137
     Align = alTop
     Caption = 'Cliente'
     Color = clWhite
@@ -30,9 +30,10 @@ object FormCadastro: TFormCadastro
     ParentColor = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 642
     object DBEditNome: TDBEdit
       Left = 32
-      Top = 55
+      Top = 47
       Width = 297
       Height = 21
       DataField = 'CLI_NOME'
@@ -42,7 +43,7 @@ object FormCadastro: TFormCadastro
     end
     object DBEditCpf: TDBEdit
       Left = 360
-      Top = 55
+      Top = 47
       Width = 209
       Height = 21
       DataField = 'CLI_CPF'
@@ -52,7 +53,7 @@ object FormCadastro: TFormCadastro
     end
     object DBEditTelefone: TDBEdit
       Left = 32
-      Top = 111
+      Top = 103
       Width = 209
       Height = 21
       DataField = 'CLI_TELEFONE'
@@ -62,7 +63,7 @@ object FormCadastro: TFormCadastro
     end
     object StaticText5: TStaticText
       Left = 32
-      Top = 32
+      Top = 24
       Width = 31
       Height = 17
       ParentCustomHint = False
@@ -82,11 +83,11 @@ object FormCadastro: TFormCadastro
     end
     object StaticText1: TStaticText
       Left = 32
-      Top = 88
-      Width = 46
+      Top = 80
+      Width = 60
       Height = 17
       ParentCustomHint = False
-      Caption = 'Telefone'
+      Caption = 'Telefone(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
@@ -102,7 +103,7 @@ object FormCadastro: TFormCadastro
     end
     object StaticText3: TStaticText
       Left = 360
-      Top = 32
+      Top = 24
       Width = 23
       Height = 17
       ParentCustomHint = False
@@ -123,13 +124,15 @@ object FormCadastro: TFormCadastro
   end
   object Panel1: TPanel
     Left = 0
-    Top = 392
-    Width = 642
+    Top = 404
+    Width = 641
     Height = 45
     Align = alBottom
     Color = 2697513
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 392
+    ExplicitWidth = 642
     object BtnIncluir: TButton
       Left = 1
       Top = 1
@@ -141,7 +144,7 @@ object FormCadastro: TFormCadastro
       OnClick = BtnIncluirClick
     end
     object BtnGravar: TButton
-      Left = 491
+      Left = 490
       Top = 1
       Width = 75
       Height = 43
@@ -150,12 +153,10 @@ object FormCadastro: TFormCadastro
       Enabled = False
       TabOrder = 1
       OnClick = BtnGravarClick
-      ExplicitLeft = 432
-      ExplicitTop = 10
-      ExplicitHeight = 25
+      ExplicitLeft = 491
     end
     object BtnCancelar: TButton
-      Left = 566
+      Left = 565
       Top = 1
       Width = 75
       Height = 43
@@ -164,117 +165,48 @@ object FormCadastro: TFormCadastro
       Enabled = False
       TabOrder = 2
       OnClick = BtnCancelarClick
-      ExplicitLeft = 529
-      ExplicitTop = 10
-      ExplicitHeight = 25
+      ExplicitLeft = 566
     end
   end
-  object GroupBox2: TGroupBox
+  object GroupBox3: TGroupBox
     Left = 0
-    Top = 177
-    Width = 642
-    Height = 120
-    Align = alTop
-    Caption = 'Parente (Opicional)'
-    Color = clWhite
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentBackground = False
-    ParentColor = False
-    ParentFont = False
+    Top = 137
+    Width = 641
+    Height = 267
+    Align = alClient
+    Caption = 'Parentes'
     TabOrder = 2
-    object DBEdit1: TDBEdit
-      Left = 32
-      Top = 35
-      Width = 297
-      Height = 21
-      DataField = 'NOME_PARENTE'
+    ExplicitTop = 257
+    ExplicitHeight = 141
+    object DBGrid1: TDBGrid
+      Left = 2
+      Top = 15
+      Width = 637
+      Height = 250
+      Align = alClient
       DataSource = DSparentes
-      Enabled = False
       TabOrder = 0
-    end
-    object StaticText4: TStaticText
-      Left = 32
-      Top = 17
-      Width = 31
-      Height = 17
-      ParentCustomHint = False
-      Caption = 'Nome'
-      Color = clWhite
-      DoubleBuffered = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMenuText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentColor = False
-      ParentDoubleBuffered = False
-      ParentFont = False
-      TabOrder = 1
-      Transparent = False
-    end
-    object StaticText6: TStaticText
-      Left = 32
-      Top = 62
-      Width = 46
-      Height = 17
-      ParentCustomHint = False
-      Caption = 'Telefone'
-      Color = clWhite
-      DoubleBuffered = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMenuText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentColor = False
-      ParentDoubleBuffered = False
-      ParentFont = False
-      TabOrder = 2
-      Transparent = False
-    end
-    object DBEdit3: TDBEdit
-      Left = 360
-      Top = 35
-      Width = 209
-      Height = 21
-      DataField = 'CPF_PARENTE'
-      DataSource = DSparentes
-      Enabled = False
-      TabOrder = 3
-    end
-    object StaticText8: TStaticText
-      Left = 360
-      Top = 17
-      Width = 23
-      Height = 17
-      ParentCustomHint = False
-      Caption = 'CPF'
-      Color = clWhite
-      DoubleBuffered = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMenuText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentColor = False
-      ParentDoubleBuffered = False
-      ParentFont = False
-      TabOrder = 4
-      Transparent = False
-    end
-    object DBEdit5: TDBEdit
-      Left = 32
-      Top = 79
-      Width = 209
-      Height = 21
-      DataField = 'TELL_PARENTE'
-      DataSource = DSparentes
-      Enabled = False
-      TabOrder = 5
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'NOME_PARENTE'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'TELL_PARENTE'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'CPF_PARENTE'
+          Visible = True
+        end>
     end
   end
   object DataSource1: TDataSource

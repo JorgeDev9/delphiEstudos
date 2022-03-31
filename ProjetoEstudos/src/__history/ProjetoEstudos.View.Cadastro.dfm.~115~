@@ -83,10 +83,10 @@ object FormCadastro: TFormCadastro
     object StaticText1: TStaticText
       Left = 32
       Top = 88
-      Width = 46
+      Width = 60
       Height = 17
       ParentCustomHint = False
-      Caption = 'Telefone'
+      Caption = 'Telefone(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
@@ -131,29 +131,32 @@ object FormCadastro: TFormCadastro
     ParentBackground = False
     TabOrder = 1
     object BtnIncluir: TButton
-      Left = 15
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 1
+      Top = 1
+      Width = 77
+      Height = 43
+      Align = alLeft
       Caption = 'Incluir'
       TabOrder = 0
       OnClick = BtnIncluirClick
     end
     object BtnGravar: TButton
-      Left = 432
-      Top = 10
+      Left = 491
+      Top = 1
       Width = 75
-      Height = 25
+      Height = 43
+      Align = alRight
       Caption = 'Gravar'
       Enabled = False
       TabOrder = 1
       OnClick = BtnGravarClick
     end
     object BtnCancelar: TButton
-      Left = 529
-      Top = 10
+      Left = 566
+      Top = 1
       Width = 75
-      Height = 25
+      Height = 43
+      Align = alRight
       Caption = 'Cancelar'
       Enabled = False
       TabOrder = 2
@@ -190,10 +193,10 @@ object FormCadastro: TFormCadastro
     object StaticText4: TStaticText
       Left = 32
       Top = 17
-      Width = 31
+      Width = 45
       Height = 17
       ParentCustomHint = False
-      Caption = 'Nome'
+      Caption = 'Nome(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
@@ -208,12 +211,12 @@ object FormCadastro: TFormCadastro
       Transparent = False
     end
     object StaticText6: TStaticText
-      Left = 360
-      Top = 17
-      Width = 46
+      Left = 32
+      Top = 62
+      Width = 60
       Height = 17
       ParentCustomHint = False
-      Caption = 'Telefone'
+      Caption = 'Telefone(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
@@ -229,21 +232,21 @@ object FormCadastro: TFormCadastro
     end
     object DBEdit3: TDBEdit
       Left = 360
-      Top = 40
+      Top = 35
       Width = 209
       Height = 21
-      DataField = 'TELL_PARENTE'
+      DataField = 'CPF_PARENTE'
       DataSource = DSparentes
       Enabled = False
       TabOrder = 3
     end
     object StaticText8: TStaticText
-      Left = 32
-      Top = 62
-      Width = 23
+      Left = 360
+      Top = 17
+      Width = 37
       Height = 17
       ParentCustomHint = False
-      Caption = 'CPF'
+      Caption = 'CPF(*)'
       Color = clWhite
       DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
@@ -262,7 +265,7 @@ object FormCadastro: TFormCadastro
       Top = 79
       Width = 209
       Height = 21
-      DataField = 'CPF_PARENTE'
+      DataField = 'TELL_PARENTE'
       DataSource = DSparentes
       Enabled = False
       TabOrder = 5

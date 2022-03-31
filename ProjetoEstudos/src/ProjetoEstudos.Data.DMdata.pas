@@ -15,7 +15,6 @@ type
     Base: TFDConnection;
     queryCli: TFDQuery;
     queryParentes: TFDQuery;
-    queryParentesID_PARENTE: TIntegerField;
     queryParentesNOME_PARENTE: TWideStringField;
     queryParentesTELL_PARENTE: TWideStringField;
     queryParentesCPF_PARENTE: TWideStringField;
@@ -39,6 +38,7 @@ type
     qryBuscaTELL_PARENTE: TWideStringField;
     qryBuscaCPF_PARENTE: TWideStringField;
     qryBuscaCLI_CODIGO_1: TIntegerField;
+    queryParentesID_PARENTE: TIntegerField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

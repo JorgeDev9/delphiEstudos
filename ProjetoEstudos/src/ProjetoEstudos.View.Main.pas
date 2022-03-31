@@ -82,6 +82,7 @@ begin
   // Exibe a tela em questão
   FormCadastro.Show;
   pnlSobre.Visible := False;
+  DM.queryParentes.Open;
 end;
 
 end.

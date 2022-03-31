@@ -37,7 +37,8 @@ var
 implementation
 
 uses
-  ProjetoEstudos.View.Cadastro, ProjetoEstudos.View.uCodes, ProjetoEstudos.View.Busca;
+  ProjetoEstudos.View.Cadastro, ProjetoEstudos.View.uCodes, ProjetoEstudos.View.Busca,
+  ProjetoEstudos.Data.DMdata;
 
 {$R *.dfm}
 
@@ -81,6 +82,7 @@ begin
   // Exibe a tela em questão
   FormCadastro.Show;
   pnlSobre.Visible := False;
+  DM.queryParentes.Open()
 end;
 
 end.

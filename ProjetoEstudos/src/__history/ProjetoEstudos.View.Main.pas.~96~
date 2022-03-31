@@ -37,7 +37,8 @@ var
 implementation
 
 uses
-  ProjetoEstudos.View.Cadastro, ProjetoEstudos.View.uCodes, ProjetoEstudos.View.Busca;
+  ProjetoEstudos.View.Cadastro, ProjetoEstudos.View.uCodes, ProjetoEstudos.View.Busca,
+  ProjetoEstudos.Data.DMdata;
 
 {$R *.dfm}
 
@@ -78,9 +79,9 @@ begin
   FormCadastro.Align := alClient;
   FormCadastro.BorderStyle := bsNone;
 
- // Exibe a tela em questão
- FormCadastro.Show;
- pnlSobre.Visible := False;
+  // Exibe a tela em questão
+  FormCadastro.Show;
+  pnlSobre.Visible := False;
 end;
 
 end.
